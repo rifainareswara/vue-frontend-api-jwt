@@ -48,6 +48,16 @@ Melakukan implementasi form pada halaman Register dan Login serta menghubungkann
 - [x] **Integrasi Login (`src/views/auth/login.vue`)**: Membuat antarmuka form masuk, menyambungkannya dengan `useLogin`. Jika login berhasl, mengamankan `token` dan data `user` (yang disimpan ke dalam cookie), lalu me-redirect ke halaman _dashboard_ (Admin) menggunakan router.
 - [x] **Global Layout**: Update judul title dokumen HTML (`index.html`) menjadi "Rifai Test Vue".
 
+## 7. Tahap Halaman Admin & Proteksi Rute (Middleware)
+
+Membuat halaman khusus admin (Dashboard) dan mengamankan halamannya agar hanya bisa diakses user yang sudah login:
+
+- [x] **Sidebar Component (`src/components/SidebarMenu.vue`)**: Membuat komponen navigasi menu admin yang terisolasi dan memanggil fungsi `logout` (dari _composable_ `useLogout.ts`) di dalamnya.
+- [x] **Dashboard View (`src/views/admin/dashboard/index.vue`)**: Membuat view utama papan kontrol admin, merender `SidebarMenu`, serta memanggil _composable_ `useAuthUser` untuk menampilkan nama admin yang sedang login secara dinamis.
+- [x] **Route Protection/Guards (`src/routes/index.ts`)**:
+  - Mendaftarkan rute baru untuk `/admin/dashboard` dan melengkapinya dengan _meta data_ `requiresAuth: true`.
+  - Membuat _Global Navigation Guard_ (`router.beforeEach`) untuk mengekstrak token dari cookie. Jika _user_ menuju halaman yang diproteksi tanpa token, ia dialihkan ke Login. Sebaliknya, _user_ yang sudah memiliki token tak bisa kembali ke halaman Login/Register, tapi dialihkan secara paksa ke Dashboard.
+
 ---
 
 _Catatan: Dokumen ini akan terus diperbarui seiring dengan berjalannya proses pengembangan proyek (seperti pembuatan fitur login, halaman dashboard, middleware proteksi rute, dll)._
