@@ -12,6 +12,7 @@ A modern frontend application built with **Vue 3**, **TypeScript**, and **Vite**
 
 ### Dependencies (Production)
 
+- **`@tanstack/vue-query`**: Powerful data fetching, caching, and state management for Vue.
 - **`axios`**: Used for robust API communication (HTTP Client).
 - **`js-cookie`**: Used for easily reading and writing authentication tokens (JWT) to browser cookies.
 - **`vue`**: The core progressive JavaScript framework.
@@ -23,6 +24,11 @@ A modern frontend application built with **Vue 3**, **TypeScript**, and **Vite**
 - **`@types/js-cookie`**: TypeScript definitions for `js-cookie`.
 - **`vite` & `@vitejs/plugin-vue`**: The build tool and its Vue integration.
 - **`vue-tsc`**: TypeScript type-checker for Vue SFCs (Single File Components).
+
+## 🗺️ Alur Proyek (Project Flow)
+
+Untuk melacak progres langkah-demi-langkah pembuatan project ini, silakan baca dokumentasi alur kerja di:
+👉 **[dokumentasi/alur.md](dokumentasi/alur.md)**
 
 ## 📦 Prerequisites
 
