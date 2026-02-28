@@ -16,6 +16,7 @@ A modern frontend application built with **Vue 3**, **TypeScript**, and **Vite**
 - **`axios`**: Used for robust API communication (HTTP Client).
 - **`js-cookie`**: Used for easily reading and writing authentication tokens (JWT) to browser cookies.
 - **`vue`**: The core progressive JavaScript framework.
+- **`vue-router`**: The official, widely used routing system for Vue.js.
 
 ### Dependencies (Development)
 

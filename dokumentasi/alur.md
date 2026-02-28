@@ -30,6 +30,16 @@ Membuat fungsionalitas logika yang dapat digunakan ulang _(reusable)_ untuk sist
 - [x] **Logout (`useLogout.ts`)**: Membuat fungsi logout untuk menghapus session `Cookies.remove("token")` dan `Cookies.remove("user")`, lalu me-redirect _user_ ke halaman login menggunakan Vue Router.
 - [x] **Get User (`composables.ts`)**: Membuat fungsi pembantu `useAuthUser` untuk mengambil data `Cookies.get('user')` dan mengubahnya menjadi objek dengan tipe (interface) `User`.
 
+## 5. Tahap Konfigurasi Layout & Routing (Vue Router)
+
+Membuat halaman antar muka (Views) dan mengatur navigasi halaman menggunakan Vue Router:
+
+- [x] **Instalasi Vue Router**: Menambahkan `vue-router` ke dalam proyek.
+- [x] **Membuat Views**: Membuat file komponen halaman untuk beranda (`src/views/home/index.vue`), halaman registrasi (`src/views/auth/register.vue`), dan halaman login (`src/views/auth/login.vue`).
+- [x] **Setup Router (`src/routes/index.ts`)**: Mendaftarkan _routes_ (jalur) untuk ketiga views yang sudah dibuat menggunakan `createRouter` dan `createWebHistory`.
+- [x] **Registrasi Global**: Menyuntikkan konfigurasi router ke dalam Vue App di `src/main.ts` (`app.use(routes)`).
+- [x] **Update App.vue**: Memodifikasi komponen akar (`src/App.vue`) untuk memuat elemen Navbar Bootstrap dasar dan merender komponen dari router menggunakan `<router-view>`.
+
 ---
 
 _Catatan: Dokumen ini akan terus diperbarui seiring dengan berjalannya proses pengembangan proyek (seperti pembuatan fitur login, halaman dashboard, middleware proteksi rute, dll)._
