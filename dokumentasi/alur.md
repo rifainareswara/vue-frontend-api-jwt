@@ -21,6 +21,15 @@ Menambahkan _package_ atau pustaka yang akan digunakan:
   - Mengatur `baseURL: 'http://localhost:3000'`. Endpoint ini akan menjadi referensi utama setiap kali aplikasi frontend melakukan panggilan data (fetch API) ke backend lokal.
 - [x] **Setup Vue Query**: Menginstal `@tanstack/vue-query` (`npm install @tanstack/vue-query`) dan mendaftarkan _plugin_-nya secara global ke dalam struktur Vue di file core utama `src/main.ts` (`app.use(VueQueryPlugin)`).
 
+## 4. Tahap Pembuatan Composables (Autentikasi)
+
+Membuat fungsionalitas logika yang dapat digunakan ulang _(reusable)_ untuk sistem Autentikasi menggunakan service API dan Vue Query:
+
+- [x] **Register (`useRegister.ts`)**: Menggunakan `useMutation` untuk mengirim request `Api.post('/api/register')`.
+- [x] **Login (`useLogin.ts`)**: Menggunakan `useMutation` untuk mengirim request `Api.post('/api/login')`.
+- [x] **Logout (`useLogout.ts`)**: Membuat fungsi logout untuk menghapus session `Cookies.remove("token")` dan `Cookies.remove("user")`, lalu me-redirect _user_ ke halaman login menggunakan Vue Router.
+- [x] **Get User (`composables.ts`)**: Membuat fungsi pembantu `useAuthUser` untuk mengambil data `Cookies.get('user')` dan mengubahnya menjadi objek dengan tipe (interface) `User`.
+
 ---
 
 _Catatan: Dokumen ini akan terus diperbarui seiring dengan berjalannya proses pengembangan proyek (seperti pembuatan fitur login, halaman dashboard, middleware proteksi rute, dll)._
