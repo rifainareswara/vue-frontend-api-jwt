@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  frontend-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vue-frontend-api-jwt-demo
+    ports:
+      - "8081:80" # Map host port 8081 to container port 80 for demo
+    restart: always
