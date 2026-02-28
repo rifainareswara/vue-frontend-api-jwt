@@ -77,6 +77,14 @@ Mengintegrasikan komponen antarmuka admin dengan fungsionalitas composables User
 - [x] **Halaman User Create (`src/views/admin/users/create.vue`)**: Membuat form untuk mendaftarkan user baru dari Admin panel, memanggil `useUserCreate`, memvalidasi input, dan me-redirect ke halaman list jika sukses.
 - [x] **Halaman User Edit (`src/views/admin/users/edit.vue`)**: Membuat form dinamis yang diisi (_populated_) via `useUserById` berdasarkan parameter `id`, kemudian mengirimkan _update_ data melalui mutasi `useUserUpdate`.
 
+## 10. Tahap Deployment & Kontainerisasi (Docker)
+
+Menyiapkan proyek agar siap di-deploy menggunakan sistem kontainer (Docker) dan Nginx sebagai _web server_ statis:
+
+- [x] **Nginx Configuration (`nginx.conf`)**: Membuat konfigurasi Nginx kustom untuk menangani _routing_ SPA (Vue Router) dan meneruskan koneksi _fallback_ ke `index.html`.
+- [x] **Dockerfile (`Dockerfile`)**: Membuat instruksi _Multi-stage build_. Tahap pertama untuk proses _build_ aplikasi Vue (Vite) menggunakan image Node, lalu tahap kedua memindahkan folder _dist_ hasil build ke image Nginx ringan (_alpine_).
+- [x] **Docker Compose (`docker-compose.yml`)**: Membuat orkestrasi _service_ Docker agar bisa membangun _image_ dan menjalankan _container_ secara mandiri dengan satu perintah di _port_ `8080`.
+
 ---
 
 _Catatan: Dokumen ini akan terus diperbarui seiring dengan berjalannya proses pengembangan proyek (seperti pembuatan fitur login, halaman dashboard, middleware proteksi rute, dll)._
