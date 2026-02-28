@@ -58,6 +58,16 @@ Membuat halaman khusus admin (Dashboard) dan mengamankan halamannya agar hanya b
   - Mendaftarkan rute baru untuk `/admin/dashboard` dan melengkapinya dengan _meta data_ `requiresAuth: true`.
   - Membuat _Global Navigation Guard_ (`router.beforeEach`) untuk mengekstrak token dari cookie. Jika _user_ menuju halaman yang diproteksi tanpa token, ia dialihkan ke Login. Sebaliknya, _user_ yang sudah memiliki token tak bisa kembali ke halaman Login/Register, tapi dialihkan secara paksa ke Dashboard.
 
+## 8. Tahap Pembuatan Composables (Manajemen User/CRUD)
+
+Membuat fungsionalitas Hook/Composable logika untuk operasi CRUD (Create, Read, Update, Delete) entitas User menggunakan Vue Query dan menyisipkan JWT Bearer Token ke dalam _Headers_:
+
+- [x] **Get Users (`useUsers.ts`)**: Menggunakan `useQuery` untuk mengambil daftar semua user (`GET /api/users`).
+- [x] **Create User (`useUserCreate.ts`)**: Menggunakan `useMutation` untuk menambahkan user baru (`POST /api/users`).
+- [x] **Get User by ID (`useUserById.ts`)**: Menggunakan `useQuery` untuk mengambil detail satu user berdasarkan parameter ID (`GET /api/users/:id`).
+- [x] **Update User (`useUserUpdate.ts`)**: Menggunakan `useMutation` untuk memperbarui data user (`PUT /api/users/:id`).
+- [x] **Delete User (`useUserDelete.ts`)**: Menggunakan `useMutation` untuk menghapus data user (`DELETE /api/users/:id`).
+
 ---
 
 _Catatan: Dokumen ini akan terus diperbarui seiring dengan berjalannya proses pengembangan proyek (seperti pembuatan fitur login, halaman dashboard, middleware proteksi rute, dll)._
