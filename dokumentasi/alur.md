@@ -40,6 +40,14 @@ Membuat halaman antar muka (Views) dan mengatur navigasi halaman menggunakan Vue
 - [x] **Registrasi Global**: Menyuntikkan konfigurasi router ke dalam Vue App di `src/main.ts` (`app.use(routes)`).
 - [x] **Update App.vue**: Memodifikasi komponen akar (`src/App.vue`) untuk memuat elemen Navbar Bootstrap dasar dan merender komponen dari router menggunakan `<router-view>`.
 
+## 6. Tahap Integrasi UI dan Autentikasi (Forms)
+
+Melakukan implementasi form pada halaman Register dan Login serta menghubungkannya ke composables:
+
+- [x] **Integrasi Register (`src/views/auth/register.vue`)**: Membuat antarmuka form pendaftaran menggunakan Bootstrap, menyambungkannya dengan variabel reaktif Vue (`ref`, `reactive`), dan mengeksekusi fungsi `mutate` dari `useRegister` saat form disubmit. Serta meng-_handle_ error validasi dari API.
+- [x] **Integrasi Login (`src/views/auth/login.vue`)**: Membuat antarmuka form masuk, menyambungkannya dengan `useLogin`. Jika login berhasl, mengamankan `token` dan data `user` (yang disimpan ke dalam cookie), lalu me-redirect ke halaman _dashboard_ (Admin) menggunakan router.
+- [x] **Global Layout**: Update judul title dokumen HTML (`index.html`) menjadi "Rifai Test Vue".
+
 ---
 
 _Catatan: Dokumen ini akan terus diperbarui seiring dengan berjalannya proses pengembangan proyek (seperti pembuatan fitur login, halaman dashboard, middleware proteksi rute, dll)._
