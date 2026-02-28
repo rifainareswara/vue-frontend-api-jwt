@@ -68,6 +68,15 @@ Membuat fungsionalitas Hook/Composable logika untuk operasi CRUD (Create, Read, 
 - [x] **Update User (`useUserUpdate.ts`)**: Menggunakan `useMutation` untuk memperbarui data user (`PUT /api/users/:id`).
 - [x] **Delete User (`useUserDelete.ts`)**: Menggunakan `useMutation` untuk menghapus data user (`DELETE /api/users/:id`).
 
+## 9. Tahap Integrasi UI Manajemen User (CRUD)
+
+Mengintegrasikan komponen antarmuka admin dengan fungsionalitas composables User CRUD yang telah dibuat:
+
+- [x] **Setup Routes User (`src/routes/index.ts`)**: Mendaftarkan rute khusus admin untuk User List, User Create, dan User Edit, lengkap dengan _meta_ `requiresAuth: true`.
+- [x] **Halaman User List (`src/views/admin/users/index.vue`)**: Menampilkan tabel data user yang diambil menggunakan `useUsers`. Mengintegrasikan tombol _Delete_ yang memanggil mutasi dari `useUserDelete` dan me-refresh daftar dengan invalidate cache dari `queryClient`.
+- [x] **Halaman User Create (`src/views/admin/users/create.vue`)**: Membuat form untuk mendaftarkan user baru dari Admin panel, memanggil `useUserCreate`, memvalidasi input, dan me-redirect ke halaman list jika sukses.
+- [x] **Halaman User Edit (`src/views/admin/users/edit.vue`)**: Membuat form dinamis yang diisi (_populated_) via `useUserById` berdasarkan parameter `id`, kemudian mengirimkan _update_ data melalui mutasi `useUserUpdate`.
+
 ---
 
 _Catatan: Dokumen ini akan terus diperbarui seiring dengan berjalannya proses pengembangan proyek (seperti pembuatan fitur login, halaman dashboard, middleware proteksi rute, dll)._
